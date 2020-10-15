@@ -11,12 +11,18 @@ import kotlinx.android.synthetic.main.cadastro_body.*
 import kotlinx.android.synthetic.main.login_body.*
 import kotlinx.android.synthetic.main.cadastro_body.edPassword
 import kotlinx.android.synthetic.main.cadastro_body.edUserName
+import kotlinx.android.synthetic.main.toolbar.*
 
 class CadastroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
+//        setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener{
+            var intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         var usuario = intent.getSerializableExtra("usuario") as? Usuario
 

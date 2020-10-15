@@ -18,7 +18,6 @@ class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
-//        setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener{
             var intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -34,7 +33,8 @@ class CadastroActivity : AppCompatActivity() {
                 edPassword.text.toString() == edPasswordConfirmation.text.toString() -> showSnackbar("Cadastro finalizado")
                 else -> {
                     showSnackbar("Senha e confirmacao sao diferentes")
-                    edPassword.setError("Senhas precisam ser iguais")
+                    txtInputPassword.setError("Senhas precisam ser iguais")
+                    txtInputPasswordConfirmation.setError("Senhas precisam ser iguais")
                 }
             }
         }

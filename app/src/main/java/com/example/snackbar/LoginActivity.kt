@@ -20,8 +20,14 @@ class LoginActivity : AppCompatActivity() {
                 .show()
         }
 
+//        nao_tem_cadastro.setOnClickListener{
+//            var intent = Intent(this, CadastroActivity::class.java)
+//            intent.putExtra("usuario", getUsuario())
+//            startActivity(intent)
+//        }
+
         nao_tem_cadastro.setOnClickListener{
-            var intent = Intent(this, CadastroActivity::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("usuario", getUsuario())
             startActivity(intent)
         }
